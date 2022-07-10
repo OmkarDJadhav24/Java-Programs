@@ -1,33 +1,26 @@
-import java.lang.*;
+//Solution in Exception2
+
 import java.util.*;
 
-class AgeInvalide extends Exception
-{
-    public AgeInvalide(String str)
-    {
-        super(str);
-    }
-}
 class Exception1
 {
-    public static void main(String a[])
-    {   
-        int age=0;
-        Scanner sobj = new Scanner(System.in);
-        age=sobj.nextInt();
-        
-        try
-        {
-           if(age<18)
-           {
-              throw new AgeInvalide("Age is Invalide");
-           }
-        }
-        catch(AgeInvalide obj)
-        {
-           System.out.println("Inside Catch");
-           System.out.println(obj);
-        }
-    }
-    
+   public static void main(String a[])
+   {
+      int ans=0,no1=0,no2=0;
+      
+      Scanner sobj = new Scanner(System.in);
+      
+      System.out.println("Please enter first number:");
+      no1=sobj.nextInt();
+      
+      System.out.println("Please enter second number:");
+      no2=sobj.nextInt();
+      
+   
+      ans=no1/no2;
+      
+      System.out.println("Division is:"+ans);
+      
+      sobj.close();
+   }
 }
