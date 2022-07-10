@@ -1,6 +1,20 @@
-import java.io.*;
+//Accept Number from user and 
+
+import java.lang.*;
 import java.util.*;
 
+class Bitwise
+{
+     public int OnBit(int iNo)
+     {
+        int iResult= 0;
+        int iMask = 0X04000000;
+        
+        iResult = iNo | iMask;
+        
+        return iResult;
+     }
+}
 
 class Program7
 {
@@ -8,25 +22,13 @@ class Program7
     {
         Scanner sobj = new Scanner(System.in);
         
-        System.out.println("Enter the string : ");
-        String str = sobj.nextLine();
+        System.out.println("Enter number");
+        int value = sobj.nextInt();
         
-        String newstr = str.replaceAll("\\s+"," ");
-        String newstr2 = newstr.trim();
+        Bitwise bobj = new Bitwise();
+        int iRet = bobj.OnBit(value);
         
-        String arr[] = newstr2.split(" ");
-        
-        int iMax = 0;
-        
-	for(int i=0;i<arr.length;i++)
-	{
-	    if(arr[i].length()>iMax)
-	    {  
-	        iMax = arr[i].length();
-	    }
-	    
-	}
-	System.out.println("Length of largest word is : "+iMax);
+        System.out.println("Updated number is:"+iRet);
     }
 
 }

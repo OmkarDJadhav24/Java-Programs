@@ -1,7 +1,20 @@
-import java.io.*;
+//Accept Number from user and 
+
+import java.lang.*;
 import java.util.*;
 
-
+class Bitwise
+{
+     public int OnBit(int iNo)
+     {
+        int iResult= 0;
+        int iMask = 0X00000008;
+        
+        iResult = iNo ^ iMask;
+        
+        return iResult;
+     }
+}
 
 class Program9
 {
@@ -9,20 +22,13 @@ class Program9
     {
         Scanner sobj = new Scanner(System.in);
         
-        System.out.println("Enter the string : ");
-        String str = sobj.nextLine();
+        System.out.println("Enter number");
+        int value = sobj.nextInt();
         
-        String newstr = str.replaceAll("\\s+"," ");
-        String newstr2 = newstr.trim();
+        Bitwise bobj = new Bitwise();
+        int iRet = bobj.OnBit(value);
         
-        String arr[] = newstr2.split(" ");
-        
-        for(int i=0;i<arr.length;i++)
-        {
-            StringBuffer sb = new StringBuffer(arr[i]);
-            System.out.println(sb.reverse());
-        }
-	
+        System.out.println("Updated number is:"+iRet);
     }
 
 }

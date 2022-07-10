@@ -1,6 +1,30 @@
-import java.io.*;
+//Accept Number from user and check bit is on or off
+
+import java.lang.*;
 import java.util.*;
 
+class Bitwise
+{
+     
+     
+     public boolean CheckBit(int iNo)
+     {
+        int iResult = 0;
+        int iMask = 4;
+        
+        iResult = iNo & iMask;
+        
+        if(iResult == 0)
+        {
+            return false;
+        }
+        else
+        {
+             return true;
+        }
+        
+     }
+}
 
 class Program2
 {
@@ -8,19 +32,20 @@ class Program2
     {
         Scanner sobj = new Scanner(System.in);
         
-        System.out.println("Enter the string : ");
-        String str = sobj.nextLine();
+        System.out.println("Enter number");
+        int value = sobj.nextInt();
         
-        char arr[] = str.toCharArray();
-        int iCnt = 0;
-        for(int i=0;i<arr.length;i++)
+        Bitwise bobj = new Bitwise();
+        boolean bret = bobj.CheckBit(value);
+        
+        if(bret == true)
         {
-            if((arr[i]>='a') && (arr[i]<='z'))
-            {
-               iCnt++;
-            }
+            System.out.println("Bit is on");
         }
-        System.out.println("Number of small case letters are :"+iCnt);
+        else
+        {
+            System.out.println("Bit is off");
+        }
     }
 
 }

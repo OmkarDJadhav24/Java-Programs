@@ -1,6 +1,22 @@
-import java.io.*;
+//Accept Number from user and Display its binary conversion
+
+import java.lang.*;
 import java.util.*;
 
+class Bitwise
+{
+     public void DisplayBinary(int iNo)
+     {
+         int iDigit = 0;
+         while(iNo != 0)
+         {
+             iDigit = iNo%2;
+             System.out.print(iDigit);
+             iNo = iNo/2;
+         }
+         System.out.println();
+     }
+}
 
 class Program1
 {
@@ -8,14 +24,11 @@ class Program1
     {
         Scanner sobj = new Scanner(System.in);
         
-        System.out.println("Enter the string : ");
-        String str = sobj.nextLine();
+        System.out.println("Enter number");
+        int value = sobj.nextInt();
         
-        char arr[] = str.toCharArray();
-        for(int i=0;i<arr.length;i++)
-        {
-            System.out.println(arr[i]);
-        }
+        Bitwise bobj = new Bitwise();
+        bobj.DisplayBinary(value);    
     }
 
 }

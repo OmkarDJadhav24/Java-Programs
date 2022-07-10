@@ -1,6 +1,28 @@
-import java.io.*;
+//Accept Number from user and check bit is on or off
+
+import java.lang.*;
 import java.util.*;
 
+class Bitwise
+{
+     public boolean CheckBit(int iNo)
+     {
+        int iResult = 0;
+        int iMask = 0X00100000;
+        
+        iResult = iNo & iMask;
+        
+        if(iResult == 0)
+        {
+            return false;
+        }
+        else
+        {
+             return true;
+        }
+        
+     }
+}
 
 class Program5
 {
@@ -8,15 +30,20 @@ class Program5
     {
         Scanner sobj = new Scanner(System.in);
         
-        System.out.println("Enter the string : ");
-        String str = sobj.nextLine();
+        System.out.println("Enter number");
+        int value = sobj.nextInt();
         
-        String newstr = str.replaceAll("\\s+"," ");
-        String newstr2 = newstr.trim();
+        Bitwise bobj = new Bitwise();
+        boolean bret = bobj.CheckBit(value);
         
-        String arr[] = newstr2.split(" ");
-        
-        System.out.println("Number of words are : "+arr.length);
+        if(bret == true)
+        {
+            System.out.println("Bit is on");
+        }
+        else
+        {
+            System.out.println("Bit is off");
+        }
     }
 
 }

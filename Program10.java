@@ -1,7 +1,28 @@
-import java.io.*;
+//Accept Number from user and 
+
+import java.lang.*;
 import java.util.*;
 
-
+class Bitwise
+{
+     public int ToggleBit(int iNo,int iPos)
+     {
+         if((iPos <= 0) || (iPos > 32))
+         {
+             System.out.println("Invalide Position");
+             return 0;
+         }
+         int iMask = 0X00000001;
+         
+         int iResult = 0;
+         
+         iMask = iMask<<(iPos-1);
+         
+         iResult = iNo ^ iMask;
+         
+         return iResult;
+     }
+}
 
 class Program10
 {
@@ -9,24 +30,18 @@ class Program10
     {
         Scanner sobj = new Scanner(System.in);
         
-        System.out.println("Enter the string : ");
-        String str = sobj.nextLine();
+        System.out.println("Enter number");
+        int value = sobj.nextInt();
         
-        String newstr = str.replaceAll("\\s+"," ");
-        String newstr2 = newstr.trim();
+        System.out.println("Enter position");
+        int Pos = sobj.nextInt();
         
-        String arr[] = newstr2.split(" ");
+        Bitwise bobj = new Bitwise();
         
-        StringBuffer finalstr = new StringBuffer();
+        int iRet = bobj.ToggleBit(value,Pos);
+        System.out.println("Updated number is: "+iRet);
         
-        for(int i=0;i<arr.length;i++)
-        {
-            StringBuffer sb = new StringBuffer(arr[i]);
-            finalstr.append((sb.reverse()).append(" "));
-        }
-        String finalstr2 = new String(finalstr);
-        System.out.println(finalstr2.trim());
-	
+        
     }
 
 }
