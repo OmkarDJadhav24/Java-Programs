@@ -1,26 +1,40 @@
 import java.io.*;
 import java.util.*;
 
-
 class Program2
 {
     public static void main(String arg[])
     {
+        int i=0,j=0;
+        int iSum = 0;
+        
         Scanner sobj = new Scanner(System.in);
         
-        System.out.println("Enter the string : ");
-        String str = sobj.nextLine();
+        System.out.println("Enter number of rows");
+        int irow = sobj.nextInt();
         
-        char arr[] = str.toCharArray();
-        int iCnt = 0;
-        for(int i=0;i<arr.length;i++)
+        System.out.println("Enter number of column");
+        int icol = sobj.nextInt();
+        
+        int Arr[][] = new int[irow][icol];
+        
+        System.out.println("Enter the elements: ");
+        for(i=0;i<Arr.length;i++)
         {
-            if((arr[i]>='a') && (arr[i]<='z'))
+            for(j=0;j<Arr[i].length;j++)
             {
-               iCnt++;
+                Arr[i][j] = sobj.nextInt();
             }
         }
-        System.out.println("Number of small case letters are :"+iCnt);
+        
+        for(i=0;i<Arr.length;i++)
+        {
+            for(j=0;j<Arr[i].length;j++)
+            {
+                iSum = iSum + Arr[i][j];
+            }
+            
+        }
+        System.out.println("Addition is: "+iSum);
     }
-
 }
