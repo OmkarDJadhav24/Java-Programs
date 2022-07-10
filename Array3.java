@@ -3,27 +3,30 @@ import java.util.*;
 
 class Array3
 {
-   public static void main(String a[])
-   {
-       int i=0,j=0;
-       Scanner sobj = new Scanner(System.in);
-       
-       int Arr[][] = new int[2][3];
-       
-       Arr[0][0]=11;
-       Arr[0][1]=21;
-       Arr[0][2]=31;
-       Arr[1][0]=41;
-       Arr[1][1]=51;
-       Arr[1][2]=61;
-       
-       System.out.println("Elements of Array are:");
-       for(i=0;i<Arr.length;i++)
-       {
-          for(j=0;j<Arr[i].length;j++)
-          {
-              System.out.println(Arr[i][j]);
-          }
-       }
-   }
-}
+    public static void main(String arg[])
+    { 
+        int i=0,j=0;
+        
+        //arr is 2 dimensional array which contains 2 one dimensional array
+        //each one dimensional array contains 3 elements and each element
+        //is of type integer
+        
+        int arr[][]=new int[2][3];
+        
+        arr[0][0]=11;
+        arr[0][1]=21;
+        arr[0][2]=51;
+        arr[1][0]=101;
+        arr[1][1]=111;
+        arr[1][2]=121;
+        
+        for(i=0;i<arr.length;i++)
+        {
+            for(j=0;j<arr[i].length;j++)
+            {
+                System.out.println(arr[i][j]);
+            }
+        }
+    }
+    
+ }

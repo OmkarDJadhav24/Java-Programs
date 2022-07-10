@@ -1,29 +1,40 @@
-import java.util.*;
 import java.lang.*;
 
 class Array1
 {
-    public static void main(String a[])
+    public static void main(String arg[])
     {
-        Scanner sobj = new Scanner(System.in);
-        int iCnt = 0;
-        int size = 0;
-        
-        System.out.println("Enter number of elements:");
-        size=sobj.nextInt();
-        
-        int Arr[] = new int[size];
-        System.out.println("Enter elements of array:");
-        for(iCnt=0;iCnt<Arr.length;iCnt++)
-        {
-            Arr[iCnt] = sobj.nextInt();
-        }
-        
-        System.out.println("Elements are:");
-        for(iCnt=0;iCnt<Arr.length;iCnt++)
-        {
-            System.out.println(Arr[iCnt]);
-        }
-        
+       int iCnt=0;
+       int arr[] = new int[5];
+       
+       arr[0]= 10;
+       arr[1]= 20;
+       arr[2]= 30;
+       arr[3]= 40;
+       arr[4]= 50;
+       
+       System.out.println("Size of array is:"+arr.length);  // length is the property for array in java
+       
+       
+       for(iCnt=0;iCnt<arr.length;iCnt++)
+       {
+           System.out.println(arr[iCnt]);
+       }
+       
+       System.out.println("Data by while loop");
+       iCnt=0;
+       
+       while(iCnt<arr.length)
+       {
+          System.out.println(arr[iCnt]);
+          iCnt++;
+       }
+       
+       System.out.println("Data by for each loop");
+       for(int no:arr)
+       {
+          System.out.println(no);
+       }
+       
     }
 }
